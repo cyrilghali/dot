@@ -38,11 +38,15 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Filetype specific plugins
 Plug 'pearofducks/ansible-vim'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'vim-pandoc/vim-pandoc'
+"Plug 'vim-pandoc/vim-pandoc-syntax'
+"Plug 'vim-pandoc/vim-pandoc'
 Plug '5long/pytest-vim-compiler'
 Plug 'hashivim/vim-terraform'
 Plug 'rust-lang/rust.vim'
+
+"Spellcheck
+Plug 'rhysd/vim-grammarous'
+Plug 'dense-analysis/ale'
 
 " IDE features
 Plug 'tpope/vim-fugitive'
@@ -51,17 +55,13 @@ Plug 'janko/vim-test'
 call plug#end()
 
 
-set nocompatible
-set expandtab " For using space instead of tab
-set tabstop=2
-set shiftwidth=2
 set nocp
 " Replace grep with rg
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 
 " Enable filetype detection for plugins and indentation options
 filetype plugin indent on
-
+"
 " Reload a file when it is changed from the outside
 set autoread
 
@@ -200,7 +200,7 @@ set smarttab
 set autoindent
 
 " This one is complicated. See :help cinoptions-values for details
-set cinoptions=(0,u0,U0,t0,g0,N-s
+"set cinoptions=(0,u0,U0,t0,g0,N-s
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " REMAPS
@@ -288,4 +288,7 @@ if version >= 801
     packadd termdebug
 endif
 
+let g:ale_linters = {'text':['languagetool','proselint'],}
+let g:ale_languagetool_executable = "/usr/bin/java"
+let g:ale_languagetool_options = "-jar ~/.vim/plugged/vim-grammarous/misc/LanguageTool-5.9/languagetool-commandline.jar"
 let g:rustfmt_autosave = 1

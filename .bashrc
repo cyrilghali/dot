@@ -8,6 +8,12 @@ fi
 export CLICOLOR=1
 export LANG="en_US.UTF-8"
 
+function zet {
+    zetdir=$(date -u +%Y%m%d%H%M%S)
+    mkdir -p $zetdir
+    vim $zetdir/README.md
+}
+
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
@@ -19,3 +25,6 @@ alias mkdir='mkdir -p'
 
 export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 export EDITOR="vim"
+
+# z jump
+. /usr/local/z/z.sh
