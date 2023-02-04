@@ -24,7 +24,6 @@ alias ll="ls -alh"
 alias mkdir='mkdir -p'
 
 export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
-export EDITOR="vim"
-
-# z jump
-. /usr/local/z/z.sh
+export VISUAL=vim
+export EDITOR="$VISUAL"
+export GIT_EDITOR="vim"
