@@ -2,7 +2,7 @@
 # Windows users: "~" is your profile's home directory, e.g. C:\Users\<YourName>
 [user]
   name = Cyril Ghali
-  email = cyril@cyrilghali.fr
+  email = contact@cyrilghali.fr
 [color]
   # Enable colors in color-supporting terminals
   ui = auto
