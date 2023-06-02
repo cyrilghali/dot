@@ -1,11 +1,17 @@
 # SOURCE
-source /usr/share/doc/fzf/examples/key-bindings.bash
-
+if type fzf &> /dev/null; then
+  [ -f /usr/share/fzf/shell/key-bindings.bash ] && source /usr/share/fzf/shell/key-bindings.bash
+fi
 # ripgrep
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
   export FZF_DEFAULT_OPTS='-m'
 fi
+
+if type bat &> /dev/null; then
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+fi
+
 
 
 # FUNCTIONS
