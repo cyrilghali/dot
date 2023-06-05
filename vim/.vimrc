@@ -368,8 +368,8 @@ nmap <leader>2 :set paste<CR>i
 " inoremap <right> <NOP>
 "
 " better use of arrow keys, number increment/decrement
-nnoremap <up> <C-a>
-nnoremap <down> <C-x>
+"nnoremap <up> <C-a>
+"nnoremap <down> <C-x>
 
 " Better page down and page up
 noremap <C-n> <C-d>
