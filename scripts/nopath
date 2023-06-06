@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-cmd=$(which "$1")
-shift
-export PATH=
-exec "$cmd" "$@"
