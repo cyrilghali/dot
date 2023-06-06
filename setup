@@ -7,8 +7,9 @@ ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
 ln -sf "$PWD/.profile" "$HOME/.profile"
 ln -sf "$PWD/.profile" "$HOME/.bash_profile"
 ln -sf "$PWD/scripts" "$HOME/Scripts"
+ln -sf "$PWD/wallpapers" "$HOME/Wallpapers"
 
-for i in vim lynx gh git tmux docker podman iam; do
+for i in vim lynx gh git tmux docker podman; do
   cd $i && ./setup
   cd -
 done

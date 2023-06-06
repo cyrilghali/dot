@@ -1,0 +1,12 @@
+#!/bin/bash
+
+language="$1"
+url="https://raw.githubusercontent.com/github/gitignore/main/${language}.gitignore"
+
+if [ -z "$language" ]; then
+  echo "Please provide a language argument."
+  exit 1
+fi
+
+wget -O .gitignore "$url"
+

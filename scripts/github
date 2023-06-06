@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Specify the URL you want to open
+github="https://github.com"
+
+# Open the URL using the default browser
+xdg-open "$github"
+
