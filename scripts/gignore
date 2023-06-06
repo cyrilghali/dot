@@ -2,11 +2,21 @@
 
 language="$1"
 url="https://raw.githubusercontent.com/github/gitignore/main/${language}.gitignore"
+gitignore_file=".gitignore"
 
 if [ -z "$language" ]; then
   echo "Please provide a language argument."
   exit 1
 fi
 
-wget -O .gitignore "$url"
+# Check if .gitignore file exists
+if [ -f "$gitignore_file" ]; then
+  # Download the language-specific gitignore content and append it to the existing file
+  wget -q -O - "$url" >> "$gitignore_file"
+  echo "Appended to $gitignore_file"
+else
+  # Download the language-specific gitignore file and save it as .gitignore
+  wget -O "$gitignore_file" "$url"
+  echo "Created $gitignore_file"
+fi
 
