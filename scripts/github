@@ -1,8 +1,43 @@
-#!/bin/sh
+#!/bin/bash
 
-# Specify the URL you want to open
-github="https://github.com"
+# Function to open GitHub website
+open_github() {
+    xdg-open "https://github.com"
+}
 
-# Open the URL using the default browser
-xdg-open "$github"
+# Function to open GitHub search page with a specific query
+search_github() {
+    query=$1
+    xdg-open "https://github.com/search?q=$query&type=repositories"
+}
+
+# Function to open GitHub user page
+open_user_page() {
+    user=$1
+    xdg-open "https://github.com/$user"
+}
+
+# Function to open GitHub repository page
+open_repo_page() {
+    user=$1
+    repo=$2
+    xdg-open "https://github.com/$user/$repo"
+}
+
+# Check if a query is provided as an argument
+if [ $# -eq 0 ]; then
+    open_github
+else
+    if [[ "$1" == -* ]]; then
+        search_github "${1#-}"
+    else
+        if [[ "$1" == *"/"* ]]; then
+            repo=(${1//\// })
+            open_repo_page "${repo[0]}" "${repo[1]}"
+        else
+            open_user_page "$1"
+        fi
+    fi
+fi
+
 
