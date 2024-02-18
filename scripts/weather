@@ -1,2 +1,12 @@
-#!/bin/sh
-exec curl -L wttr.in/Paris
+#!/bin/bash
+
+# The purpose of this script is to check the weather for the day, using curl wttr.in
+# This script will display the weather for Paris by default, and the user can input a different city as an argument.
+# If the user does not input a city, the script will display the weather for Paris.
+#
+# Usage: ./weather.sh [city]
+#
+
+city="${1:-Paris}"
+city="$(urlencode $city)"
+curl "wttr.in/$city?lang=fr"
