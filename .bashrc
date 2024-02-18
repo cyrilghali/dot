@@ -27,7 +27,7 @@ export WEIGHT=108.5
 export HEIGHT=182
 export TZ=Europe/Paris
 export REPOS="$HOME/repos"
-export GHREPOS="$REPOS"
+export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dot"
 export SCRIPTS="$DOTFILES/scripts"
 export HELP_BROWSER=lynx
@@ -236,6 +236,7 @@ alias coin="clip '(yes|no)'"
 alias neo="neo -D -c gold"
 alias more="less"
 alias v=nvim
+alias vim=nvim
 
 alias ..="cd .."
 

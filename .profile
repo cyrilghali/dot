@@ -7,3 +7,9 @@ if [ -n "$BASH_VERSION" ]; then
         . "$HOME/.bashrc"
     fi
 fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # needed for brew
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
