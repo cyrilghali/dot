@@ -57,6 +57,7 @@ export LOCALBIN="$HOME/.local/bin"
 export LC_COLLATE=C
 export CFLAGS="-Wall -Wextra -Werror -O0 -g -fsanitize=address -fno-omit-frame-pointer -finstrument-functions"
 
+export GPG_TTY=$(tty)
 export LESS="-FXR"
 export LESS_TERMCAP_mb="[35m" # magenta
 export LESS_TERMCAP_md="[33m" # yellow
@@ -305,3 +306,9 @@ else
 	#	source /usr/share/fzf/completion.bash
 	[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
